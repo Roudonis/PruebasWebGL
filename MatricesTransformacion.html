@@ -1,0 +1,688 @@
+<DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Matrices Transformacion</title>
+    </head>
+    <style>
+        table
+        {
+            font-family: Consolas;
+            border-collapse: collapse;
+        }
+        td
+        {
+            border: 2px solid #000000;
+            text-align: center;
+            width: 90px;
+        }
+        .grid-container-1
+        {
+            display: grid;
+            grid-template-columns: 7fr 6fr;
+            grid-gap: 10px;
+        }
+        .grid-container-2
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+        .grid-container-3
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+        }
+    </style>
+    <body onload="main()">
+        <div class="grid-container-1">
+            <div class="grid-child">
+                <div class="grid-container-2">
+                    <div align="center">
+                        <hr><div>Matriz Simbolica Traslacion Y Rotacion</div><hr>
+                        <table>
+                            <tr><td id="a11SimbolicaTS">a11</td><td id="a12SimbolicaTS">a12</td><td id="a13SimbolicaTS">a13</td><td id="a14SimbolicaTS">a14</td></tr>
+                            <tr><td id="a21SimbolicaTS">a21</td><td id="a22SimbolicaTS">a22</td><td id="a23SimbolicaTS">a23</td><td id="a24SimbolicaTS">a24</td></tr>
+                            <tr><td id="a31SimbolicaTS">a31</td><td id="a32SimbolicaTS">a32</td><td id="a33SimbolicaTS">a33</td><td id="a34SimbolicaTS">a34</td></tr>
+                            <tr><td id="a41SimbolicaTS">a41</td><td id="a42SimbolicaTS">a42</td><td id="a43SimbolicaTS">a43</td><td id="a44SimbolicaTS">a44</td></tr>
+                        </table>
+                        <hr><div>Matriz Simbolica Rotacion X</div><hr>
+                        <table>
+                            <tr><td id="a11SimbolicaX">a11</td><td id="a12SimbolicaX">a12</td><td id="a13SimbolicaX">a13</td><td id="a14SimbolicaX">a14</td></tr>
+                            <tr><td id="a21SimbolicaX">a21</td><td id="a22SimbolicaX">a22</td><td id="a23SimbolicaX">a23</td><td id="a24SimbolicaX">a24</td></tr>
+                            <tr><td id="a31SimbolicaX">a31</td><td id="a32SimbolicaX">a32</td><td id="a33SimbolicaX">a33</td><td id="a34SimbolicaX">a34</td></tr>
+                            <tr><td id="a41SimbolicaX">a41</td><td id="a42SimbolicaX">a42</td><td id="a43SimbolicaX">a43</td><td id="a44SimbolicaX">a44</td></tr>
+                        </table>
+                        <hr><div>Matriz Simbolica Rotacion Y</div><hr>
+                        <table>
+                            <tr><td id="a11SimbolicaY">a11</td><td id="a12SimbolicaY">a12</td><td id="a13SimbolicaY">a13</td><td id="a14SimbolicaY">a14</td></tr>
+                            <tr><td id="a21SimbolicaY">a21</td><td id="a22SimbolicaY">a22</td><td id="a23SimbolicaY">a23</td><td id="a24SimbolicaY">a24</td></tr>
+                            <tr><td id="a31SimbolicaY">a31</td><td id="a32SimbolicaY">a32</td><td id="a33SimbolicaY">a33</td><td id="a34SimbolicaY">a34</td></tr>
+                            <tr><td id="a41SimbolicaY">a41</td><td id="a42SimbolicaY">a42</td><td id="a43SimbolicaY">a43</td><td id="a44SimbolicaY">a44</td></tr>
+                        </table>
+                        <hr><div>Matriz Simbolica Rotacion Z</div><hr>
+                        <table>
+                            <tr><td id="a11SimbolicaZ">a11</td><td id="a12SimbolicaZ">a12</td><td id="a13SimbolicaZ">a13</td><td id="a14SimbolicaZ">a14</td></tr>
+                            <tr><td id="a21SimbolicaZ">a21</td><td id="a22SimbolicaZ">a22</td><td id="a23SimbolicaZ">a23</td><td id="a24SimbolicaZ">a24</td></tr>
+                            <tr><td id="a31SimbolicaZ">a31</td><td id="a32SimbolicaZ">a32</td><td id="a33SimbolicaZ">a33</td><td id="a34SimbolicaZ">a34</td></tr>
+                            <tr><td id="a41SimbolicaZ">a41</td><td id="a42SimbolicaZ">a42</td><td id="a43SimbolicaZ">a43</td><td id="a44SimbolicaZ">a44</td></tr>
+                        </table><hr>
+                    </div>
+                    <div align="center">
+                        <hr><div>Matriz De Valores Traslacion Y Rotacion</div><hr>
+                        <table>
+                            <tr><td id="a11ValorTS">a11</td><td id="a12ValorT">a12</td><td id="a13ValorT">a13</td><td id="a14ValorT">a14</td></tr>
+                            <tr><td id="a21ValorTS">a21</td><td id="a22ValorT">a22</td><td id="a23ValorT">a23</td><td id="a24ValorT">a24</td></tr>
+                            <tr><td id="a31ValorTS">a31</td><td id="a32ValorT">a32</td><td id="a33ValorT">a33</td><td id="a34ValorT">a34</td></tr>
+                            <tr><td id="a41ValorTS">a41</td><td id="a42ValorT">a42</td><td id="a43ValorT">a43</td><td id="a44ValorT">a44</td></tr>
+                        </table>
+                        <hr><div>Matriz De Valores Rotacion X</div><hr>
+                        <table>
+                            <tr><td id="a11ValorX">a11</td><td id="a12ValorX">a12</td><td id="a13ValorX">a13</td><td id="a14ValorX">a14</td></tr>
+                            <tr><td id="a21ValorX">a21</td><td id="a22ValorX">a22</td><td id="a23ValorX">a23</td><td id="a24ValorX">a24</td></tr>
+                            <tr><td id="a31ValorX">a31</td><td id="a32ValorX">a32</td><td id="a33ValorX">a33</td><td id="a34ValorX">a34</td></tr>
+                            <tr><td id="a41ValorX">a41</td><td id="a42ValorX">a42</td><td id="a43ValorX">a43</td><td id="a44ValorX">a44</td></tr>
+                        </table>
+                        <hr><div>Matriz De Valores Rotacion Y</div><hr>
+                        <table>
+                            <tr><td id="a11ValorY">a11</td><td id="a12ValorY">a12</td><td id="a13ValorY">a13</td><td id="a14ValorY">a14</td></tr>
+                            <tr><td id="a21ValorY">a21</td><td id="a22ValorY">a22</td><td id="a23ValorY">a23</td><td id="a24ValorY">a24</td></tr>
+                            <tr><td id="a31ValorY">a31</td><td id="a32ValorY">a32</td><td id="a33ValorY">a33</td><td id="a34ValorY">a34</td></tr>
+                            <tr><td id="a41ValorY">a41</td><td id="a42ValorY">a42</td><td id="a43ValorY">a43</td><td id="a44ValorY">a44</td></tr>
+                        </table>
+                        <hr><div>Matriz De Valores Rotacion Z</div><hr>
+                        <table>
+                            <tr><td id="a11ValorZ">a11</td><td id="a12ValorZ">a12</td><td id="a13ValorZ">a13</td><td id="a14ValorZ">a14</td></tr>
+                            <tr><td id="a21ValorZ">a21</td><td id="a22ValorZ">a22</td><td id="a23ValorZ">a23</td><td id="a24ValorZ">a24</td></tr>
+                            <tr><td id="a31ValorZ">a31</td><td id="a32ValorZ">a32</td><td id="a33ValorZ">a33</td><td id="a34ValorZ">a34</td></tr>
+                            <tr><td id="a41ValorZ">a41</td><td id="a42ValorZ">a42</td><td id="a43ValorZ">a43</td><td id="a44ValorZ">a44</td></tr>
+                        </table><hr>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-child">
+                <div class="grid-container-3">
+                    <div align="center">
+                        <hr><label id="LabelSliderTrasX">Traslacion X</label>
+                        <input type="range" id="SliderTrasX" oninput="handlerSliderTrasX()" min="-100" max="100" step="1"><p id="DisplaySliderTrasX">0 Unidades</p><hr>
+                        <label id="LabelSliderTrasY">Traslacion Y</label>
+                        <input type="range" id="SliderTrasY" oninput="handlerSliderTrasY()" min="-100" max="100" step="1"><p id="DisplaySliderTrasY">0 Unidades</p><hr>
+                        <label id="LabelSliderTrasZ">Traslacion Z</label>
+                        <input type="range" id="SliderTrasZ" oninput="handlerSliderTrasZ()" min="-100" max="100" step="1"><p id="DisplaySliderTrasZ">0 Unidades</p><hr>
+                    </div>
+                    <div align="center">
+                        <hr><label id="LabelSliderEscX">Escala X</label>
+                        <input type="range" id="SliderEscX" oninput="handlerSliderEscX()" min="0" max="2" step="0.1"><p id="DisplaySliderEscX">0 Unidades</p><hr>
+                        <label id="LabelSliderEscY">Escala Y</label>
+                        <input type="range" id="SliderEscY" oninput="handlerSliderEscY()" min="0" max="2" step="0.1"><p id="DisplaySliderEscY">0 Unidades</p><hr>
+                        <label id="LabelSliderEscZ">Escala Z</label>
+                        <input type="range" id="SliderEscZ" oninput="handlerSliderEscZ()" min="0" max="2" step="0.1"><p id="DisplaySliderEscZ">0 Unidades</p><hr>
+                    </div>
+                    <div align="center">
+                        <hr><label id="LabelSliderRotX">Rotacion X</label>
+                        <input type="range" id="SliderRotX" oninput="handlerSliderRotX()" min="-180" max="180" step="1"><p id="DisplaySliderRotX">0 Grados</p><hr>
+                        <label id="LabelSliderRotY">Rotacion Y</label>
+                        <input type="range" id="SliderRotY" oninput="handlerSliderRotY()" min="-180" max="180" step="1"><p id="DisplaySliderRotY">0 Grados</p><hr>
+                        <label id="LabelSliderRotZ">Rotacion Z</label>
+                        <input type="range" id="SliderRotZ" oninput="handlerSliderRotZ()" min="-180" max="180" step="1"><p id="DisplaySliderRotZ">0 Grados</p><hr>
+                    </div>
+                </div>
+                <div align="center"><canvas id="webGL" width="450" height="450"></canvas></div>
+            </div>
+        </div>
+    </body>
+    <script id="CodigoVertexShader" type="GLSL">
+        attribute vec4 a_Posicion;
+        uniform mat4 u_matrizRotX;
+        uniform mat4 u_matrizRotY;
+        uniform mat4 u_matrizRotZ;
+        void main()
+        {
+            gl_Position = u_matrizRotY * u_matrizRotZ * u_matrizRotX * a_Posicion;
+        }
+    </script>
+    <script id="CodigoFragmentShader" type="GLSL">
+        void main()
+        {
+            gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+        }
+    </script>
+    <script>
+        var trasX = 0;
+        var trasY = 0;
+        var trasZ = 0;
+        var escX = 1;
+        var escY = 1;
+        var escZ = 1;
+        var rotX = 0;
+        var rotY = 0;
+        var rotZ = 0;
+
+        var radian = 0.0;
+        var seno = 0.0
+        var coseno = 0.0;
+        var a11 = 0;
+        var a12 = 0;
+        var a13 = 0;
+        var Sx = 1.0;
+        var Sy = 1.0;
+        var Sz = 1.0;
+        var Tx = 0.0;
+        var Ty = 0.0;
+        var Tz = 0.0;
+        var gl = 0;
+        var valorSlider = 0;
+        var numVertices = 6;
+
+        var matrizTransformacion = new Float32Array([
+                Sx, 0.0, 0.0, 0.0,
+                0.0, Sy, 0.0, 0.0,
+                0.0, 0.0, Sz, 0.0,
+                Tx, Ty, Tz, 1.0
+            ]);
+
+        var matrizRotacionZ = new Float32Array([
+            0.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 1.0, 0.0,
+            0.0, 0.0, 0.0, 1.0
+        ])
+
+        var matrizRotacionX = new Float32Array([
+            1.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 1.0,
+        ])
+
+        var matrizRotacionY = new Float32Array([
+            0.0, 0.0, 0.0, 0.0,
+            0.0, 1.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 1.0
+        ])
+        
+        var displayAngulo = 0;
+        var locMatrizRotZ = 0;
+        var locMatrizRotX = 0;
+        var locMatrizRotY = 0;
+        var locMatrizTransformacion = 0;
+
+        function main()
+        {
+            var canvas = document.getElementById('webGL');
+            gl = canvas.getContext('webgl');
+            setUpPrograma(gl);
+            locMatrizRotZ = gl.getUniformLocation(gl.program, 'u_matrizRotZ');
+            locMatrizRotX = gl.getUniformLocation(gl.program, 'u_matrizRotX');
+            locMatrizRotY = gl.getUniformLocation(gl.program, 'u_matrizRotY');
+            radian = Math.PI * rotZ / 180.0;
+            seno = Math.sin(radian);
+            coseno = Math.cos(radian);
+            matrizRotacionZ[0] = coseno;
+            matrizRotacionZ[4] = seno * (-1);
+            matrizRotacionZ[1] = seno;
+            matrizRotacionZ[5] = coseno;
+            radian = Math.PI * rotX / 180.0;
+            seno = Math.sin(radian);
+            coseno = Math.cos(radian);
+            matrizRotacionX[5] = coseno;
+            matrizRotacionX[9] = seno * (-1);
+            matrizRotacionX[6] = seno;
+            matrizRotacionX[10] = coseno;
+            gl.uniformMatrix4fv(locMatrizRotZ, false, matrizRotacionZ);
+            gl.uniformMatrix4fv(locMatrizRotX, false, matrizRotacionX);
+            gl.uniformMatrix4fv(locMatrizRotY, false, matrizRotacionY);
+            //gl.uniformMatrix4fv(locMatrizTransformacion, false, matrizTransformacion);
+            inicializarVertexBuffer(gl);
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl.drawArrays(gl.TRIANGLES, 0, numVertices);
+            console.log("tonto");
+        }
+
+        function ejecutarShaders()
+        {
+            gl.uniformMatrix4fv(locMatrizTransformacion, false, matrizTransformacion);
+            inicializarVertexBuffer(gl);
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl.drawArrays(gl.TRIANGLES, 0, 3);
+        }
+
+        function handlerSliderTrasX()
+        {
+            trasX = document.getElementById("SliderTrasX").value;
+            document.getElementById("DisplaySliderTrasX").innerHTML = String(trasX) + " Unidades";
+            matrizTransformacion[12] = trasX/100;
+            ejecutarShaders();
+        }
+
+        function handlerSliderTrasY()
+        {
+            trasY = document.getElementById("SliderTrasY").value;
+            document.getElementById("DisplaySliderTrasY").innerHTML = String(trasY) + " Unidades";
+            matrizTransformacion[13] = trasY/100;
+            ejecutarShaders();
+        }
+
+        function handlerSliderTrasZ()
+        {
+            trasZ = document.getElementById("SliderTrasZ").value;
+            document.getElementById("DisplaySliderTrasZ").innerHTML = String(trasZ) + " Unidades";
+            matrizTransformacion[14] = trasZ/100;
+            ejecutarShaders();
+        }
+
+        function handlerSliderEscX()
+        {
+            escX = document.getElementById("SliderEscX").value;
+            document.getElementById("DisplaySliderEscX").innerHTML = String(escX) + " Unidades";
+            matrizTransformacion[0] = escX;
+            ejecutarShaders();
+        }
+
+        function handlerSliderEscY()
+        {
+            escY = document.getElementById("SliderEscY").value;
+            document.getElementById("DisplaySliderEscY").innerHTML = String(escY) + " Unidades";
+            matrizTransformacion[5] = escY;
+            ejecutarShaders();
+        }
+
+        function handlerSliderEscZ()
+        {
+            escZ = document.getElementById("SliderEscZ").value;
+            document.getElementById("DisplaySliderEscZ").innerHTML = String(escZ) + " Unidades";
+            matrizTransformacion[10] = escZ;
+            ejecutarShaders();
+        }
+
+        function handlerSliderRotX()
+        {
+            rotX = document.getElementById("SliderRotX").value;
+            document.getElementById("DisplaySliderRotX").innerHTML = String(rotX) + " Grados";
+            radian = Math.PI * rotX / 180.0;
+            seno = Math.sin(radian);
+            coseno = Math.cos(radian);
+            matrizRotacionX[5] = coseno;
+            matrizRotacionX[9] = seno * (-1);
+            matrizRotacionX[6] = seno;
+            matrizRotacionX[10] = coseno;
+            gl.uniformMatrix4fv(locMatrizRotX, false, matrizRotacionX);
+            inicializarVertexBuffer(gl);
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl.drawArrays(gl.LINES, 0, numVertices);
+        }
+
+        function handlerSliderRotY()
+        {
+            rotY = document.getElementById("SliderRotY").value;
+            document.getElementById("DisplaySliderRotY").innerHTML = String(rotY) + " Grados";
+            radian = Math.PI * rotY / 180.0;
+            seno = Math.sin(radian);
+            coseno = Math.cos(radian);
+            matrizRotacionY[0] = coseno;
+            matrizRotacionY[2] = seno * (-1);
+            matrizRotacionY[8] = seno;
+            matrizRotacionY[10] = coseno;
+            gl.uniformMatrix4fv(locMatrizRotY, false, matrizRotacionY);
+            inicializarVertexBuffer(gl);
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl.drawArrays(gl.LINES, 0, numVertices);
+        }
+
+        function handlerSliderRotZ()
+        {
+            rotZ = document.getElementById("SliderRotZ").value;
+            document.getElementById("DisplaySliderRotZ").innerHTML = String(rotZ) + " Grados";
+            radian = Math.PI * rotZ / 180.0;
+            seno = Math.sin(radian);
+            coseno = Math.cos(radian);
+            matrizRotacionZ[0] = coseno;
+            matrizRotacionZ[4] = seno * (-1);
+            matrizRotacionZ[1] = seno;
+            matrizRotacionZ[5] = coseno;
+            gl.uniformMatrix4fv(locMatrizRotZ, false, matrizRotacionZ);
+            radian = Math.PI * rotX / 180.0;
+            seno = Math.sin(radian);
+            coseno = Math.cos(radian);
+            matrizRotacionX[5] = coseno;
+            matrizRotacionX[9] = seno * (-1);
+            matrizRotacionX[6] = seno;
+            matrizRotacionX[10] = coseno;
+            inicializarVertexBuffer(gl);
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl.drawArrays(gl.LINES, 0, numVertices);
+            //document.getElementById("a11Simbolica").innerHTML = "Cos(" + String(rotZMatrizA) + ")";
+            //document.getElementById("a12Simbolica").innerHTML = "-Sin(" + String(rotZMatrizA) + ")";
+            //document.getElementById("a21Simbolica").innerHTML = "Sin(" + String(rotZMatrizA) + ")";
+            //document.getElementById("a22Simbolica").innerHTML = "Cos(" + String(rotZMatrizA) + ")";
+            //document.getElementById("a11Valor").innerHTML = String(matrizRotacionZ[0]).slice(0, 6);
+            //document.getElementById("a12Valor").innerHTML = String(matrizRotacionZ[4]).slice(0, 6);
+            //document.getElementById("a21Valor").innerHTML = String(matrizRotacionZ[1]).slice(0, 6);
+            //document.getElementById("a22Valor").innerHTML = String(matrizRotacionZ[5]).slice(0, 6);
+        }
+
+        function handlerSlider1MatA()
+        {
+            if(trasMatASeleccionada)
+            {
+                trasXMatrizA = document.getElementById('Slider1MatrizA').value;
+                document.getElementById("DisplaySlider1MatA").innerHTML = " " + String(trasXMatrizA) + " Unidades";
+                document.getElementById("a14Valor").innerHTML = String(trasXMatrizA);
+                
+            }
+            if(rotZMatASeleccionada)
+            {
+                rotZMatrizA = document.getElementById('Slider1MatrizA').value;
+                document.getElementById("DisplaySlider1MatA").innerHTML = " " + String(rotZMatrizA) + " Grados";
+                radian = Math.PI * rotZMatrizA / 180.0;
+                seno = Math.sin(radian);
+                coseno = Math.cos(radian);
+                document.getElementById("a11Simbolica").innerHTML = "Cos(" + String(rotZMatrizA) + ")";
+                document.getElementById("a12Simbolica").innerHTML = "-Sin(" + String(rotZMatrizA) + ")";
+                document.getElementById("a21Simbolica").innerHTML = "Sin(" + String(rotZMatrizA) + ")";
+                document.getElementById("a22Simbolica").innerHTML = "Cos(" + String(rotZMatrizA) + ")";
+                matrizRotacionZ[0] = coseno;
+                matrizRotacionZ[4] = seno * (-1);
+                matrizRotacionZ[1] = seno;
+                matrizRotacionZ[5] = coseno;
+                document.getElementById("a11Valor").innerHTML = String(matrizRotacionZ[0]).slice(0, 6);
+                document.getElementById("a12Valor").innerHTML = String(matrizRotacionZ[4]).slice(0, 6);
+                document.getElementById("a21Valor").innerHTML = String(matrizRotacionZ[1]).slice(0, 6);
+                document.getElementById("a22Valor").innerHTML = String(matrizRotacionZ[5]).slice(0, 6);
+                gl.uniformMatrix4fv(locMatrizTransformacion, false, matrizRotacionZ);
+                inicializarVertexBuffer(gl);
+                gl.clearColor(0.0, 0.0, 0.0, 1.0);
+                gl.clear(gl.COLOR_BUFFER_BIT);
+                gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+            }
+        }
+
+        function handlerSlider2MatA()
+        {
+            trasYMatrizA = document.getElementById('Slider2MatrizA').value;
+            document.getElementById("DisplaySlider2MatA").innerHTML = " " + String(trasYMatrizA) + " Unidades";
+            document.getElementById("a24Valor").innerHTML = String(trasYMatrizA);
+            matrizTransformacion[13] = trasYMatrizA;
+            gl.uniformMatrix4fv(locMatrizTransformacion, false, matrizTransformacion);
+            inicializarVertexBuffer(gl);
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl.drawArrays(gl.TRIANGLES, 0, 3);
+        }
+
+        function handlerSlider3MatA()
+        {
+            trasZMatrizA = document.getElementById('Slider3MatrizA').value;
+            document.getElementById("DisplaySlider3MatA").innerHTML = " " + String(trasZMatrizA) + " Unidades";
+            document.getElementById("a34Valor").innerHTML = String(trasZMatrizA);
+            matrizTransformacion[14] = trasZMatrizA;
+            gl.uniformMatrix4fv(locMatrizTransformacion, false, matrizTransformacion);
+            inicializarVertexBuffer(gl);
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl.drawArrays(gl.TRIANGLES, 0, 3);
+        }
+
+        function handlerRadioMatrizA()
+        {
+            console.log("RadioPresionado");
+            if((document.getElementById("RadioRotXMatA").checked) == true)
+            {
+                console.log("Rot X Seleccionada");
+                document.getElementById('LabelSlider1MatrizA').style.display = "inline";
+                document.getElementById('LabelSlider2MatrizA').style.display = "none";
+                document.getElementById('LabelSlider3MatrizA').style.display = "none";
+                document.getElementById('Slider1MatrizA').style.display = "inline";
+                document.getElementById('Slider2MatrizA').style.display = "none";
+                document.getElementById('Slider3MatrizA').style.display = "none";
+                document.getElementById('DisplaySlider1MatA').style.display = "inline";
+                document.getElementById('DisplaySlider2MatA').style.display = "none";
+                document.getElementById('DisplaySlider3MatA').style.display = "none";
+                document.getElementById('LabelSlider1MatrizA').innerHTML = 'Rotacion X (-180 a +180)'
+            }
+            if((document.getElementById("RadioRotYMatA").checked) == true)
+            {
+                console.log("Rot Y Seleccionada");
+            }
+            if((document.getElementById("RadioRotZMatA").checked) == true)
+            {
+                console.log("Rot Z Seleccionada");
+                rotZMatASeleccionada = true;
+                trasMatASeleccionada = false;
+                document.getElementById('LabelSlider1MatrizA').style.display = "inline";
+                document.getElementById('LabelSlider2MatrizA').style.display = "none";
+                document.getElementById('LabelSlider3MatrizA').style.display = "none";
+                document.getElementById('Slider1MatrizA').style.display = "inline";
+                document.getElementById('Slider2MatrizA').style.display = "none";
+                document.getElementById('Slider3MatrizA').style.display = "none";
+                document.getElementById('DisplaySlider1MatA').style.display = "inline";
+                document.getElementById('DisplaySlider2MatA').style.display = "none";
+                document.getElementById('DisplaySlider3MatA').style.display = "none";
+                document.getElementById('LabelSlider1MatrizA').innerHTML = 'Rotacion Eje Z (-180 a 180)'
+                document.getElementById('LabelSlider2MatrizA').innerHTML = ''
+                document.getElementById('LabelSlider3MatrizA').innerHTML = ''
+                document.getElementById('Slider1MatrizA').step = 1;
+                document.getElementById('Slider1MatrizA').min = -180;
+                document.getElementById('Slider1MatrizA').max = 180;
+                document.getElementById('Slider1MatrizA').value = rotZMatrizA;
+                document.getElementById("DisplaySlider1MatA").innerHTML = " " + String(rotZMatrizA) + " Grados";
+                document.getElementById("a11Simbolica").innerHTML = "Cos θ";
+                document.getElementById("a12Simbolica").innerHTML = "-Sin θ";
+                document.getElementById("a13Simbolica").innerHTML = "0";
+                document.getElementById("a14Simbolica").innerHTML = "0";
+                document.getElementById("a21Simbolica").innerHTML = "Sin θ";
+                document.getElementById("a22Simbolica").innerHTML = "Cos θ";
+                document.getElementById("a23Simbolica").innerHTML = "0";
+                document.getElementById("a24Simbolica").innerHTML = "0";
+                document.getElementById("a31Simbolica").innerHTML = "0";
+                document.getElementById("a32Simbolica").innerHTML = "0";
+                document.getElementById("a33Simbolica").innerHTML = "1";
+                document.getElementById("a34Simbolica").innerHTML = "0";
+                document.getElementById("a41Simbolica").innerHTML = "0";
+                document.getElementById("a42Simbolica").innerHTML = "0";
+                document.getElementById("a43Simbolica").innerHTML = "0";
+                document.getElementById("a44Simbolica").innerHTML = "1";
+                document.getElementById("a11Valor").innerHTML = "1.0";
+                document.getElementById("a12Valor").innerHTML = "0.0";
+                document.getElementById("a13Valor").innerHTML = "0.0";
+                document.getElementById("a14Valor").innerHTML = String(trasXMatrizA);
+                document.getElementById("a21Valor").innerHTML = "0.0";
+                document.getElementById("a22Valor").innerHTML = "1.0";
+                document.getElementById("a23Valor").innerHTML = "0.0";
+                document.getElementById("a24Valor").innerHTML = String(trasYMatrizA);
+                document.getElementById("a31Valor").innerHTML = "0.0";
+                document.getElementById("a32Valor").innerHTML = "0.0";
+                document.getElementById("a33Valor").innerHTML = "1.0";
+                document.getElementById("a34Valor").innerHTML = String(trasZMatrizA);
+                document.getElementById("a41Valor").innerHTML = "0.0";
+                document.getElementById("a42Valor").innerHTML = "0.0";
+                document.getElementById("a43Valor").innerHTML = "0.0";
+                document.getElementById("a44Valor").innerHTML = "1.0";
+            }
+            if((document.getElementById("RadioTrasMatA").checked) == true)
+            {
+                console.log("Traslacion Seleccionada");
+                trasMatASeleccionada = true;
+                rotZMatASeleccionada = false;
+                document.getElementById('LabelSlider1MatrizA').style.display = "inline";
+                document.getElementById('LabelSlider2MatrizA').style.display = "inline";
+                document.getElementById('LabelSlider3MatrizA').style.display = "inline";
+                document.getElementById('Slider1MatrizA').style.display = "inline";
+                document.getElementById('Slider2MatrizA').style.display = "inline";
+                document.getElementById('Slider3MatrizA').style.display = "inline";
+                document.getElementById('DisplaySlider1MatA').style.display = "inline";
+                document.getElementById('DisplaySlider2MatA').style.display = "inline";
+                document.getElementById('DisplaySlider3MatA').style.display = "inline";
+                document.getElementById('LabelSlider1MatrizA').innerHTML = 'Traslacion X (-100 a 100)'
+                document.getElementById('LabelSlider2MatrizA').innerHTML = 'Traslacion Y (-100 a 100)'
+                document.getElementById('LabelSlider3MatrizA').innerHTML = 'Traslacion Z (-100 a 100)'
+                document.getElementById('Slider1MatrizA').step = 0.01;
+                document.getElementById('Slider2MatrizA').step = 0.01;
+                document.getElementById('Slider3MatrizA').step = 0.01;
+                document.getElementById('Slider1MatrizA').min = -1;
+                document.getElementById('Slider2MatrizA').min = -1;
+                document.getElementById('Slider3MatrizA').min = -1;
+                document.getElementById('Slider1MatrizA').max = 1;
+                document.getElementById('Slider2MatrizA').max = 1;
+                document.getElementById('Slider3MatrizA').max = 1;
+                document.getElementById('Slider1MatrizA').value = trasXMatrizA;
+                document.getElementById('Slider2MatrizA').value = trasYMatrizA;
+                document.getElementById('Slider3MatrizA').value = trasZMatrizA;
+                document.getElementById("DisplaySlider1MatA").innerHTML = " " + String(trasXMatrizA) + " Unidades";
+                document.getElementById("DisplaySlider2MatA").innerHTML = " " + String(trasYMatrizA) + " Unidades";
+                document.getElementById("DisplaySlider3MatA").innerHTML = " " + String(trasZMatrizA) + " Unidades";
+                document.getElementById("a11Simbolica").innerHTML = "1";
+                document.getElementById("a12Simbolica").innerHTML = "0";
+                document.getElementById("a13Simbolica").innerHTML = "0";
+                document.getElementById("a14Simbolica").innerHTML = "Tx";
+                document.getElementById("a21Simbolica").innerHTML = "0";
+                document.getElementById("a22Simbolica").innerHTML = "1";
+                document.getElementById("a23Simbolica").innerHTML = "0";
+                document.getElementById("a24Simbolica").innerHTML = "Ty";
+                document.getElementById("a31Simbolica").innerHTML = "0";
+                document.getElementById("a32Simbolica").innerHTML = "0";
+                document.getElementById("a33Simbolica").innerHTML = "1";
+                document.getElementById("a34Simbolica").innerHTML = "Tz";
+                document.getElementById("a41Simbolica").innerHTML = "0";
+                document.getElementById("a42Simbolica").innerHTML = "0";
+                document.getElementById("a43Simbolica").innerHTML = "0";
+                document.getElementById("a44Simbolica").innerHTML = "1";
+                document.getElementById("a11Valor").innerHTML = "1.0";
+                document.getElementById("a12Valor").innerHTML = "0.0";
+                document.getElementById("a13Valor").innerHTML = "0.0";
+                document.getElementById("a14Valor").innerHTML = String(trasXMatrizA);
+                document.getElementById("a21Valor").innerHTML = "0.0";
+                document.getElementById("a22Valor").innerHTML = "1.0";
+                document.getElementById("a23Valor").innerHTML = "0.0";
+                document.getElementById("a24Valor").innerHTML = String(trasYMatrizA);
+                document.getElementById("a31Valor").innerHTML = "0.0";
+                document.getElementById("a32Valor").innerHTML = "0.0";
+                document.getElementById("a33Valor").innerHTML = "1.0";
+                document.getElementById("a34Valor").innerHTML = String(trasZMatrizA);
+                document.getElementById("a41Valor").innerHTML = "0.0";
+                document.getElementById("a42Valor").innerHTML = "0.0";
+                document.getElementById("a43Valor").innerHTML = "0.0";
+                document.getElementById("a44Valor").innerHTML = "1.0";
+            }
+            if((document.getElementById("RadioEscMatA").checked) == true)
+            {
+                console.log("Escalamiento Seleccionado");
+            }
+        }
+
+        function tonto()
+        {
+            console.log("tonto");
+            matrizTransformacion[12] = slider.value / 100;
+            displayAngulo.innerHTML = slider.value;
+            var loc2MatrizTransformacion = gl.getUniformLocation(gl.program, 'u_matrizTransformacion');
+            gl.uniformMatrix4fv(loc2MatrizTransformacion, false, matrizTransformacion);
+            inicializarVertexBuffer(gl);
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl.drawArrays(gl.TRIANGLES, 0, 3);
+        }
+
+        function setUpPrograma(gl)
+        {
+            var codigoVertexShader = document.getElementById('CodigoVertexShader').text;
+            var codigoFragmentShader = document.getElementById('CodigoFragmentShader').text;
+            console.log(codigoVertexShader);
+            var vertexShader = gl.createShader(gl.VERTEX_SHADER);
+            gl.shaderSource(vertexShader, codigoVertexShader);
+            gl.compileShader(vertexShader);
+            var exitoVS = gl.getShaderParameter(vertexShader, gl.COMPILE_STATUS);
+            if (exitoVS)
+            {
+                console.log("Eres una verga!");
+            }
+            else
+            {
+                console.log("Mamaste");
+                console.log(gl.getShaderInfoLog(vertexShader));
+                gl.deleteShader(vertexShader);
+            }
+            var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+            gl.shaderSource(fragmentShader, codigoFragmentShader);
+            gl.compileShader(fragmentShader);
+            var exitoFS = gl.getShaderParameter(fragmentShader, gl.COMPILE_STATUS);
+            if (exitoFS)
+            {
+                console.log("Eres la leche en polvo Pa");
+            }
+            else
+            {
+                console.log("Mamaste");
+                console.log(gl.getShaderInfoLog(fragmentShader));
+                gl.deleteShader(fragmentShader);
+            }
+            var programa = gl.createProgram();
+            gl.attachShader(programa, vertexShader);
+            gl.attachShader(programa, fragmentShader);
+            gl.linkProgram(programa);
+            console.log(gl.getProgramInfoLog(programa));
+            var exitoPrograma = gl.getProgramParameter(programa, gl.LINK_STATUS);
+            if (exitoPrograma)
+            {
+                console.log("Eres el pinaculo de la intelectualidad");
+                console.log(gl.getProgramInfoLog(programa));
+            }
+            else
+            {
+                console.log("Eres un estupido");
+                gl.deleteProgram(programa);
+            }
+            gl.useProgram(programa);
+            gl.program = programa;
+        }
+
+        function inicializarVertexBuffer(gl)
+        {          
+            var locPosicion = gl.getAttribLocation(gl.program, 'a_Posicion');
+            var vertices = new Float32Array(
+                [
+                    -0.3,  0.3, -0.3,
+                     0.3,  0.3, -0.3,
+                     0.3,  0.3, -0.3,
+                     0.3,  0.3,  0.3,
+                     0.3,  0.3,  0.3,
+                    -0.3,  0.3,  0.3,
+                    -0.3,  0.3,  0.3,
+                    -0.3,  0.3, -0.3,
+
+                    -0.3, -0.3, -0.3,
+                     0.3, -0.3, -0.3,
+                     0.3, -0.3, -0.3,
+                     0.3, -0.3,  0.3,
+                     0.3, -0.3,  0.3,
+                    -0.3, -0.3,  0.3,
+                    -0.3, -0.3,  0.3,
+                    -0.3, -0.3, -0.3,
+
+                    -0.3,  0.3, -0.3,
+                    -0.3, -0.3, -0.3,
+                    -0.3,  0.3,  0.3,
+                    -0.3, -0.3,  0.3,
+
+                     0.3,  0.3, -0.3,
+                     0.3, -0.3, -0.3,
+                     0.3,  0.3,  0.3,
+                     0.3, -0.3,  0.3,
+                ]);
+            numVertices = 24;
+            var vertexBuffer = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+            gl.vertexAttribPointer(locPosicion, 3, gl.FLOAT, false, 0, 0);
+            gl.enableVertexAttribArray(locPosicion);
+        }
+    </script>
+</html>
+</DOCTYPE>
